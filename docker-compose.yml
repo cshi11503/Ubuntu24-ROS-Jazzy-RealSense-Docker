@@ -1,0 +1,34 @@
+services:
+  realsense:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        ROS_DISTRO: ${ROS_DISTRO}
+
+    image: ${DOCKER_IMAGE}
+    container_name: ${CONTAINER_NAME}
+
+    # Allow ROS 2 communication with the host
+    network_mode: host
+    ipc: host
+
+    # Allow access to the RealSense USB camera
+    privileged: true
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - ./ros2_ws:/workspace/ros2_ws
+      - ./scripts:/workspace/scripts
+
+    environment:
+      ROS_DOMAIN_ID: ${ROS_DOMAIN_ID}
+      ROS_DISTRO: ${ROS_DISTRO}
+      DISPLAY: ${DISPLAY:-}
+
+    working_dir: /workspace
+
+    stdin_open: true
+    tty: true
+
+    restart: "no"
+    
