@@ -19,6 +19,7 @@ services:
       - /dev/bus/usb:/dev/bus/usb
       - ./ros2_ws:/workspace/ros2_ws
       - ./scripts:/workspace/scripts
+      - /home/cshi30/ACE_Lab/RealSense_Setup/Images:/workspace/captures
 
     environment:
       ROS_DOMAIN_ID: ${ROS_DOMAIN_ID}
@@ -31,4 +32,3 @@ services:
     tty: true
 
     restart: "no"
-    
