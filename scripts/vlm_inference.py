@@ -1,3 +1,7 @@
+# using chatgpt with API key
+# need to pay for credits
+# dont wanna spend money on this
+
 import os
 import json
 import base64
