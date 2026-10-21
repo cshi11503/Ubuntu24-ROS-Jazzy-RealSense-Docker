@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-opencv \
     python3-numpy \
     python3-pip \
+    python3-venv \
     usbutils \
     v4l-utils \
     && rm -rf /var/lib/apt/lists/*
