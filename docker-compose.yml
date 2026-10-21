@@ -21,6 +21,7 @@ services:
       - ./ros2_ws:/workspace/ros2_ws
       - ./scripts:/workspace/scripts
       - /home/cshi30/ACE_Lab/RealSense_Setup/Images:/workspace/captures
+      - /home/cshi30/ACE_Lab/RealSense_Setup/Models:/root/.cache/huggingface
 
     environment:
       ROS_DOMAIN_ID: ${ROS_DOMAIN_ID}
