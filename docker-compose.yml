@@ -25,6 +25,7 @@ services:
       ROS_DOMAIN_ID: ${ROS_DOMAIN_ID}
       ROS_DISTRO: ${ROS_DISTRO}
       DISPLAY: ${DISPLAY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
 
     working_dir: /workspace
 
