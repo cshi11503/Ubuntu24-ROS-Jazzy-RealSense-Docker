@@ -30,6 +30,15 @@ RUN python3 -m venv --system-site-packages /opt/vlm-venv
 # Install OpenAI Python SDK inside the virtual environment
 RUN /opt/vlm-venv/bin/pip install --no-cache-dir openai
 
+# Install PyTorch and Hugging Face dependencies for local VLM inference
+RUN /opt/vlm-venv/bin/pip install --no-cache-dir \
+    torch \
+    torchvision \
+    transformers \
+    accelerate \
+    pillow \
+    safetensors
+    
 # Use virtual environment Python by default
 ENV PATH="/opt/vlm-venv/bin:${PATH}"
 
