@@ -23,6 +23,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     v4l-utils \
     && rm -rf /var/lib/apt/lists/*
 
+# Create a Python virtual environment
+RUN python3 -m venv --system-site-packages /opt/vlm-venv
+
+# Install OpenAI Python SDK inside the virtual environment
+RUN /opt/vlm-venv/bin/pip install --no-cache-dir openai
+
+# Use virtual environment Python by default
+ENV PATH="/opt/vlm-venv/bin:${PATH}"
+
 # Create working directory
 WORKDIR /workspace
 
